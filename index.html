@@ -17,7 +17,14 @@
 <body>
     <header class="header">
         <div class="logo-box">
-            <img src="icon.png" alt="logo" class="logo">
+            <picture calss="footer_logo">
+                <!--We can specify multiple sources in a picture component-->
+                <!-- 1x if low resoution screen, then use a small image, 2x if high resolution screen then use big image  -->
+                <source srcset="icon-1x.png 1x, icon-2x.png 2x" media="(max-width:37.5em)">
+                <!--in case the screen is bigger, then we will user the other image-->
+                <img src="logo2.png" alt="logo" class="logo">
+                </picturecalss>
+
         </div>
         <div class="text-box">
             <h1 class="heading">
