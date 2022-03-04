@@ -47,6 +47,7 @@ height: 35px;
     transform: translate(-50%,-50%); /* mou el 50% del l'alçada del element cap a dalt, i el mateix amb el width */
     left:50%;
     top:40%;
+    text-align: center;
 }
 .heading{
     color:white;
@@ -75,8 +76,68 @@ height: 35px;
     font-weight: 300;
     letter-spacing: 17px;
     animation: moveInRight 2s ease-out;
+    margin-bottom: 60px;
 
 }
+.btn:link,  /*pseudoclass to select a special state of the class. same style  link and visited*/
+.btn:visited{
+    border-radius: 100px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block; /*acts as a block, instead of a text*/
+    transition:all  .5s; /* transition of the button when go back to normal state after beeing hovered*/
+    position: relative;
+
+}
+.btn:hover{ /* when mouse is on top*/
+    transform: translateY(-3px);
+    box-shadow: 2px 10px 20px rgba(0,0,0,.2);
+}
+.btn:active{ /* when clicked*/
+    transform: translateY(-1px);
+    box-shadow: 1px 5px 10px rgba(0,0,0,.2);
+
+}
+.btn-white{
+    background-color: white;
+    color: #777;
+
+
+}
+.btn-animated{
+
+    animation: moveInBottom 2s ease-out .75s ;
+    animation-fill-mode: backwards; /* apply style of animation 0% from the beggining*/
+}
+.btn::after{ /* treated like a child of btn*/
+    content: ""; /*obligatori posar-ho*/
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+   transition: all 0.4s;
+}
+
+.btn-white::after{
+    background-color: white;
+}
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+
+}
+
+
+
+
+
+
+
 @keyframes moveInLeft {
    0% { /*when animation starts*/
     opacity: 0; 
@@ -102,6 +163,18 @@ height: 35px;
    100%{ /* when animation ends*/
     opacity: 1; 
     transform: translateX(0);
+
+   }
+}
+@keyframes moveInBottom{
+   0% { /*when animation starts*/
+    opacity: 0; 
+    transform: translateY(50px);
+   } 
+   
+   100%{ /* when animation ends*/
+    opacity: 1; 
+    transform: translateY(0);
 
    }
 }
