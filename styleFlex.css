@@ -1,0 +1,85 @@
+/*COLORS:
+Lightgreen: #asd111
+Mediumgreen: #asd111
+Darkgreen: #asd111 */
+/* apply to all elements*/
+:root{
+   --color-primary: rgb(0, 174, 255);
+   --color-primary-dark: rgb(0, 50, 73);
+   --color-sec:rgb(248, 129, 61);
+   --color-sec2:rgb(179, 65, 0);
+}
+*{ 
+    margin:0;
+    padding:0;
+    box-sizing: border-box; /* border are not added to total width or total heigh*/
+}
+
+
+.FLEX_INTRO{
+    /*properties for containers*/
+    display: flex;
+    flex-direction: row; /*default row*/
+    flex-wrap: wrap;
+    justify-content: center; /* main axis*/
+    align-items: center; /* cross axis*/
+    align-content:stretch ; /*only applies when there is more than one row of items*/
+                            /*so it alignes how the rows are alignes in the cross axis*/
+    /*properties for items*/
+    align-self: auto; 
+    order: 0; 
+
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    /*this 3 can be summerize into:*/
+    flex:0 1 auto;
+}
+body{
+    background-image: linear-gradient(to right bottom, var(--color-primary),var(--color-primary-dark) );
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Container{
+    margin:30px;
+    /*background-image: linear-gradient(to left top, var(--color-sec),var(--color-sec2));*/
+    background-color: antiquewhite;
+    height: 90vh;
+    width: 80vw;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items:center;  /*stretch : make all elements the same height*/
+    /*align-items: baseline; /* align items so the text is in the same line*/
+    flex-wrap: wrap;
+    align-content: flex-start; /*alignes the rows created by the wrap*/
+}
+.item{
+    background-color: crimson;
+    padding: 30px;
+    margin: 10px;
+    font-size: 40px;
+    order:0;
+    /*flex-grow: 1;*/
+}
+.it2{
+    height: 200px;
+    /*flex-grow: 3;
+    flex-basis: 200px; /*width, or less if screen size decreases */
+    /*flex-shrink: 0; /* it doesnt shrink*/
+    /*flex 0 0 300px; /*grow, shrink, basis*/
+
+}
+.it4{
+    font-size: 50px;
+    align-self: flex-start;
+    flex-grow: 4;
+    order: -1;
+
+}
+
+
+
